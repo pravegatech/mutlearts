@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+      body, div, form, input, select, textarea, label, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      h1 {
+      position: absolute;
+      margin: 0;
+      font-size: 40px;
+      color: #fff;
+      z-index: 2;
+      line-height: 83px;
+      }
+      textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      form {
+      width: 100%;
+      padding: 40px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 8px  #669999; 
+      }
+      .banner-1 {
+      position: relative;
+      height: 300px;
+      background-image: url("./assets/img/cta-bg.jpg");  
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      }
+      .banner-1::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.7); 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      }
+      input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      input[type="date"] {
+      padding: 4px 5px;
+      }
+      textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      color:  #669999;
+      }
+      .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 3px 0  #669999;
+      color: #669999;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      .item span {
+      color: red;
+      }
+      .week {
+      display:flex;
+      }
+      .colums {
+      display:flex;
+      justify-content:space-between;
+      flex-direction:row;
+      flex-wrap:wrap;
+      }
+      .colums div {
+      width:48%;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color:  #a3c2c2;
+      }
+      .item i {
+      right: 1%;
+      top: 30px;
+      z-index: 1;
+      }
+      input[type=radio], input[type=checkbox]  {
+      display: none;
+      }
+      label.radio {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 15px 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      .question-answer label {
+      display: block;
+      }
+      label.radio:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      }
+      input[type=radio]:checked + label:before, label.radio:hover:before {
+      border: 2px solid  #669999;
+      }
+      label.radio:after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 5px;
+      width: 8px;
+      height: 4px;
+      border: 3px solid  #669999;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+      }
+      input[type=radio]:checked + label:after {
+      opacity: 1;
+      }
+      .flax {
+      display:flex;
+      justify-content:space-around;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background:  #669999;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background:  #a3c2c2;
+      }
+      @media (min-width: 568px) {
+      .name-item, .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, .name-item div {
+      width: calc(50% - 20px);
+      }
+      .name-item div input {
+      width:97%;}
+      .name-item div label {
+      display:block;
+      padding-bottom:5px;
+      }
+      }
+    </style>
+     <meta charset="utf-8">
+     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+ 
+     <title> MulteArts/Enroll Trainer</title>
+     <meta content="" name="description">
+     <meta content="" name="keywords">
+ 
+     <!-- Favicons -->
+     <!-- <link href="assets/img/favicon.png" rel="icon">
+   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+ 
+     <!-- Google Fonts -->
+     <link
+         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+         rel="stylesheet">
+ 
+     <!-- Vendor CSS Files -->
+     <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+     <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+     <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ 
+ 
+     <!-- Template Main CSS File -->
+     <link href="assets/css/style.css" rel="stylesheet">
+  </head>
+  <body>
+
+
+        <!-- ======= Header ======= -->
+        <header id="header" class="fixed-top ">
+            <div class="container d-flex align-items-center justify-content-lg-between">
+                <a href="index.html" class="logo me-auto me-lg-0 col-lg-3 "><img src="assets/img/Logo_world.jpeg" alt=""
+                        class="img-fluid"></a>
+    
+                <nav id="navbar" class="navbar order-last order-lg-0 justify-content-center text-md-end ">
+                    <ul>
+                        <li><a class="nav-link scrollto" href="index.html">Home</a></li>
+                        <li><a class="nav-link scrollto " href="aboutus.html">About Us </a></li>
+                        <li><a class="nav-link scrollto" href="gallery.html">Gallery</a></li>
+                        <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a href="multearts.html">MulteArts</a></li>
+                                <li><a href="MulteAcademy.html">MulteAcademy</a></li>
+                                <li><a href="MulteTech.html">MulteTech</a></li>
+                                <li><a href="Multe_outreach.html">Multe outreach</a></li>
+                            </ul>
+                        </li>
+                        <li><a class="nav-link scrollto" href="What'sNew.html">What's New</a></li>
+                        <li><a class="nav-link scrollto " href="contact.html">Contact Us</a></li>
+                        <li class="dropdown"><a href="#"><span>Request</span><i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                                <li><a class="get-started-btn active" href="Enroll_Trainer.html">Enroll Trainer</a></li>
+                                <li><a class="get-started-btn" href="free_trial.html">Free Trial</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <i class="bi bi-list mobile-nav-toggle"></i>
+    
+                </nav><!--navbar -->
+              <a href="Getapp.html" class="get-started-btn scrollto"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
+                                    <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+                                    <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                  </svg> Get App</a>
+            </div>
+        </header><!-- End Header -->
+                <!-- ======= Breadcrumbs ======= -->
+                <section class="breadcrumbs">
+                    <div class="container">
+              
+                      <div class="d-flex justify-content-between align-items-center">
+                        <h2>Enroll_Trainer</h2>
+                        <ol>
+                          <li><a href="index.html">Home</a></li>
+                          <li>Enroll Trainer</li>
+                        </ol>
+                      </div>
+                    </div>
+                  </section><!-- End Breadcrumbs -->
+    <div class="testbox">
+      <form action="/" class="col-lg-11">
+          
+        <div class="banner-1 ">
+          <h1> Trainer Enroll Registration form  </h1>
+        </div>
+        <div class="colums">
+          <div class="item">
+            <label for="fname"> Name<span>*</span></label>
+            <input id="fname" type="text" name="fname" required/>
+          </div>
+          <div class="item">
+            <label for="eaddress">Email Address<span>*</span></label>
+            <input id="eaddress" type="text"   name="eaddress" required/>
+          </div>
+          <div class="item">
+            <label for="phone">Phone Number<span>*</span></label>
+            <input id="phone" type="tel"   name="phone" required/>
+          </div>
+          <div class="item">
+            <label for="phone">Alternate Number<span>*</span></label>
+            <input id="phone" type="tel"   name="phone" required/>
+          </div>
+          <div class="item">
+            <label for="city">Your Qualification<span>*</span></label>
+            <input id="city" type="text"   name="city" required/>
+          </div>
+
+          <div class="item">
+            <label for="city">City<span>*</span></label>
+            <input id="city" type="text"   name="city" required/>
+          </div>
+          </div>
+
+          <div class="question">
+            <label>Gender:</label>
+            <div class="question-answer">
+              <div>
+                <input type="radio" value="none" id="radio_1" name="type"/>
+                <label for="radio_1" class="radio"><span>MALE</span></label>
+              </div>
+              <div>
+                <input  type="radio" value="none" id="radio_2" name="type"/>
+                <label for="radio_2" class="radio"><span>FEMALE</span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="colums">
+            <div class="item">
+              <label for="ftuition"> How many hours can you take tuition per a day?<span>*</span></label>
+              <input id="ftuition" type="text" name="ftuition" required/>
+            </div>
+            <div class="item">
+              <label for="etenth">Which subjects can you teach for Tenth and Intermediate?<span></span></label>
+              <input id="etenth" type="text"   name="etenth" required/>
+            </div>
+            </div>
+            <div class="question">
+              <label>At which time you can take the classes in a day?</label>
+              <div class="question-answer">
+                <div>
+                  <input type="radio" value="none" id="radio_1" name="type"/>
+                  <label for="radio_1" class="radio"><span>Morning</span></label>
+                </div>
+                <div>
+                  <input  type="radio" value="none" id="radio_2" name="type"/>
+                  <label for="radio_2" class="radio"><span>Evening</span></label>
+                </div>
+                <div>
+                  <input  type="radio" value="none" id="radio_3" name="type"/>
+                  <label for="radio_3" class="radio"><span>Any Time</span></label>
+                </div>
+              </div>
+            </div>
+            <div class="question">
+              <label>Do you want to teach</label>
+              <div class="question-answer">
+                <div>
+                  <input type="radio" value="none" id="radio_1" name="type"/>
+                  <label for="radio_1" class="radio"><span>Only online</span></label>
+                </div>
+                <div>
+                  <input  type="radio" value="none" id="radio_2" name="type"/>
+                  <label for="radio_2" class="radio"><span>Only offline</span></label>
+                </div>
+                <div>
+                  <input  type="radio" value="none" id="radio_3" name="type"/>
+                  <label for="radio_2" class="radio"><span>Both</span></label>
+                </div>
+              </div>
+            </div>
+            <div class="question">
+              <label>Which classes can you teach?</label>
+              <div class="question-answer">
+                <div>
+                  <input type="radio" value="none" id="radio_1" name="type"/>
+                  <label for="radio_1" class="radio"><span>1st class to 5th class</span></label>
+                </div>
+                <div>
+                  <input  type="radio" value="none" id="radio_2" name="type"/>
+                  <label for="radio_2" class="radio"><span>6th</span></label>
+                </div>
+              </div>
+            </div>
+            <div class="question">
+              <label>Which board can you teach?</label>
+              <div class="question-answer">
+                <div>
+                  <input type="radio" value="none" id="radio_1" name="type"/>
+                  <label for="radio_1" class="radio"><span>CBSE</span></label>
+                </div>
+                <div>
+                  <input  type="radio" value="none" id="radio_2" name="type"/>
+                  <label for="radio_2" class="radio"><span>ICSE</span></label>
+                </div>
+                <div>
+                  <input  type="radio" value="none" id="radio_3" name="type"/>
+                  <label for="radio_3" class="radio"><span>State Syllabus</span></label>
+                </div>
+              </div>
+            </div>
+            <div class="question">
+              <label>Here Maximum batch size is 3.Do you agree with that?</label>
+              <div class="question-answer">
+                <div>
+                  <input type="radio" value="none" id="radio_1" name="type"/>
+                  <label for="radio_1" class="radio"><span>Yes</span></label>
+                </div>
+                <div>
+                  <input  type="radio" value="none" id="radio_2" name="type"/>
+                  <label for="radio_2" class="radio"><span>No</span></label>
+                </div>
+              </div>
+            </div>
+            <div class="colums">
+              <div class="item">
+                <label for="fexp">Number of years of your experience<span>*</span></label>
+                <input id="fexp" type="tel" name="fexp" required/>
+              </div>
+              <div class="item">
+                <label for="fdull">How can you improve the dull students?<span>*</span></label>
+                <input id="fdull" type="text"   name="fdull" required/>
+              </div>
+              </div>
+              <div class="item">
+                <label for="fdull">If you can take any other classes or trainings along with the above ,type here..<span>*</span></label>
+                <input id="fdull" type="text"   name="fdull" required/>
+              </div>
+              <div class="question">
+                <label>Your available slots</label>
+                <div class="question-answer">
+                  <div>
+                    <input type="radio" value="none" id="radio_1" name="type"/>
+                    <label for="radio_1" class="radio"><span>Monday to Friday</span></label>
+                  </div>
+                  <div>
+                    <input  type="radio" value="none" id="radio_2" name="type"/>
+                    <label for="radio_2" class="radio"><span>Only saturday and sunday</span></label>
+                  </div>
+                  <div>
+                    <input  type="radio" value="none" id="radio_3" name="type"/>
+                    <label for="radio_3" class="radio"><span>Every day</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <label for="fslot">Your available slot timings:<span>*</span></label>
+                <input id="fslot" type="text"   name="fslot" required/>
+              </div>
+              <div class="question">
+                <label>You are willing to take: </label>
+                <div class="question-answer">
+                  <div>
+                    <input type="radio" value="none" id="radio_1" name="type"/>
+                    <label for="radio_1" class="radio"><span>1 to 1</span></label>
+                  </div>
+                  <div>
+                    <input  type="radio" value="none" id="radio_2" name="type"/>
+                    <label for="radio_2" class="radio"><span>Group(Maximum 3 kids)</span></label>
+                  </div>
+                  <div>
+                    <input  type="radio" value="none" id="radio_3" name="type"/>
+                    <label for="radio_3" class="radio"><span>1 to 1 and group Both</span></label>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <label for="fhour">Your charges for 1 hour(Give for 1to 1 and group also)<span>*</span></label>
+                <input id="fhour" type="text"   name="fhour" required/>
+              </div>
+              <div class="question">
+                <label>How do you know about Multe Arts New dimension?</label>
+                <div class="question-answer">
+                  <div>
+                    <input type="radio" value="none" id="radio_1" name="type"/>
+                    <label for="radio_1" class="radio"><span>Friends/Relatives</span></label>
+                  </div>
+                  <div>
+                    <input  type="radio" value="none" id="radio_2" name="type"/>
+                    <label for="radio_2" class="radio"><span>Facebook</span></label>
+                  </div>
+                  <div>
+                    <input  type="radio" value="none" id="radio_3" name="type"/>
+                    <label for="radio_3" class="radio"><span>Youtube</span></label>
+                  </div>
+                </div>
+              </div>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <!-- <div class="item">
+            <label for="Email Id"> Email<span>*</span></label>
+            <input id="Email Id" type="email" name="Email" required/>
+          </div>
+          <div class="item">
+            <label for="address1">Address 1<span>*</span></label>
+            <input id="address1" type="text"   name="address1" required/>
+          </div>
+          <div class="item">
+            <label for="address2">Address 2<span>*</span></label>
+            <input id="address2" type="text"   name="address2" required/>
+          </div>
+          <div class="item">
+            <label for="state">State<span>*</span></label>
+            <input id="state" type="text"   name="state" required/>
+          </div>
+          <div class="item">
+            <label for="zip">Zip/Postal Code<span>*</span></label>
+            <input id="zip" type="text" name="zip" required/>
+          </div>
+          <div class="item">
+            <label for="city">City<span>*</span></label>
+            <input id="city" type="text"   name="city" required/>
+          </div>
+          <div class="item">
+            <label for="eaddress">Email Address<span>*</span></label>
+            <input id="eaddress" type="text"   name="eaddress" required/>
+          </div>
+          <div class="item">
+            <label for="phone">Phone<span>*</span></label>
+            <input id="phone" type="tel"   name="phone" required/>
+          </div>
+        </div>
+        <div class="question">
+          <label>Membership Type</label>
+          <div class="question-answer">
+            <div>
+              <input type="radio" value="none" id="radio_1" name="type"/>
+              <label for="radio_1" class="radio"><span>Standard</span></label>
+            </div>
+            <div>
+              <input  type="radio" value="none" id="radio_2" name="type"/>
+              <label for="radio_2" class="radio"><span>Premium</span></label>
+            </div>
+            <div>
+              <input  type="radio" value="none" id="radio_3" name="type"/>
+              <label for="radio_3" class="radio"><span>Ultimate</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="question">
+          <label>Preferred way to contact </label>
+          <div class="question-answer">
+            <div>
+              <input type="radio" value="none" id="radio_4" name="contact"/>
+              <label for="radio_4" class="radio"><span>Phone</span></label>
+            </div>
+            <div>
+              <input  type="radio" value="none" id="radio_5" name="contact"/>
+              <label for="radio_5" class="radio"><span>Email</span></label>
+            </div>
+            <div>
+              <input  type="radio" value="none" id="radio_6" name="contact"/>
+              <label for="radio_6" class="radio"><span>Any</span></label>
+            </div>
+          </div> -->
+         <div class="btn-block">
+          <button type="submit" href="/">Submit</button>
+        </div>
+      </form>
+    </div>
+      <!-- ======= Footer ======= -->
+  <footer id="footer-1">
+    <div class="container d-md-flex py-4">
+
+        <div class="me-md-auto text-center text-md-start">
+            <h2>To explore yourself more and more in various fields, don't be late to contact us!</h2>
+        </div>
+        <div class="social-links-1 text-center text-md-end pt-3 pt-md-0">
+            <a href="#" class="get-started-btn-1 scrollto">Get Started</a>
+        </div>
+    </div>
+</footer>
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>About Us</h4>
+            <p>Multeworld is a platform offering training with respect to various fields. We have a talented
+                team offering courses related to technical, non-technical, academic and linguistic skills.<br>
+                By collaborating with you we are seeking to spread the talents named under MutleArts
+                Courses, MulteTech Courses and MulteAcademy across the members of different groups.
+            </p>
+            <div class="mt-3">
+                <a href="https://play.google.com/store/apps/details?id=co.thor.jzhic"
+                    class="logo me-auto me-lg-0 col-lg- "><img src="assets/img/App Store.png" alt=""
+                        class="img-fluid-footer"></a>
+                <a href="https://play.google.com/store/apps/details?id=co.thor.jzhic"
+                    class="logo me-auto me-lg-0 col-lg- "><img src="assets/img/Apple.png" alt=""
+                        class="img-fluid-footer"></a>
+            </div>
+        </div>
+
+          <div class="col-lg-3 col-md-6 ">
+            <div class="footer-info">
+                <h4>Address</h4>
+                <p class="mt-2">Plot No 102, Vaishnavi Arcade, <br>
+                    Hyderabad, Telangana 500016.<br>
+                    <strong>Phone:</strong> +91 99859 41854<br>
+                <strong>Phone:</strong> +91 63021 94501<br>
+                    <strong>Email:</strong> info@MulteArts.com<br>
+                </p>
+                <div class="social-links mt-2 ">
+                    <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                    <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                    <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                    <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                    <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+              <li><i class="bx bx-chevron-right"></i><a href="index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="aboutus.html">About Us</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="gallery.html">Gallery</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="What'sNew.html">What's New</a></li>
+              
+          </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+              <li><i class="bx bx-chevron-right"></i><a href="multearts.html">MulteArts</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="MulteAcademy.html">MulteAcademy</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="MulteTech.html">MulteTech</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="Multe_outreach.html">Multe outreach</a></li>
+          </ul>
+      </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="copyright">
+          &copy; Copyright <strong><span>MulteArts</span></strong>. All Rights Reserved
+      </div>
+  </div>
+  </footer><!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
