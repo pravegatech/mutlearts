@@ -418,7 +418,7 @@ background-color: rgba(0,0,0,0.7);
 @media (max-width:500px){
   .portfolio-details .portfolio-details-slider img {
     width: 100%;
-    height: 40vh !important;
+    height: 34vh !important;
     padding-top: 24px;
 }
 }
