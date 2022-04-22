@@ -4,35 +4,6 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <style>
-    .error {
-      color: red;
-      font-size: 14px !important;
-      position: relative;
-      top: 6px;
-      left: 5px;
-    }
-
-
-    #successMessage {
-      color: green;
-      font-size: 15px !important;
-      display: none;
-      position: relative;
-      top: -20px;
-      left: 40px;
-    }
-
-    #errorMessage {
-      color: red;
-      font-size: 15px !important;
-      display: none;
-      position: relative;
-      top: 26px;
-      left: 40px;
-    }
-  </style>
   <title> MulteArts/contact Us</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -54,6 +25,7 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
   <!-- Template Main CSS File -->
@@ -68,37 +40,37 @@
       <a href="index.html" class="logo me-auto me-lg-0 col-lg-3 "><img src="assets/img/Logo_world.jpeg" alt=""
           class="img-fluid"></a>
 
-          <nav id="navbar" class="navbar order-last order-lg-0 justify-content-center text-md-end ">
+      <nav id="navbar" class="navbar order-last order-lg-0 justify-content-center text-md-end ">
+        <ul>
+          <li><a class="nav-link scrollto" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto " href="aboutus.html">About Us </a></li>
+          <li><a class="nav-link scrollto" href="gallery.html">Gallery</a></li>
+          <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-                <li><a class="nav-link scrollto" href="index.html">Home</a></li>
-                <li><a class="nav-link scrollto active " href="aboutus.html">About Us </a></li>
-                <li><a class="nav-link scrollto" href="gallery.html">Gallery</a></li>
-                <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                      <li><a href="multearts.html">MulteArts</a></li>
-                      <li><a href="MulteAcademy.html">MulteAcademy</a></li>
-                      <li><a href="MulteTech.html">MulteTech</a></li>
-                      <li><a href="Workshop.html">Kids Camp/ Workshop</a></li>
-                      <li><a href="multetoys.html">MulteToys Talk Show</a></li>
-                      <li><a href="Train_the_Trainer.html">Train The Trainer</a></li>
-                      <li><a href="Multe_outreach.html">Multe outreach</a></li>
-                      <li><a href="Enroll_Trainer.html">Enroll Trainer</a></li>
+              <li><a href="multearts.html">MulteArts</a></li>
+              <li><a href="MulteAcademy.html">MulteAcademy</a></li>
+              <li><a href="MulteTech.html">MulteTech</a></li>
+              <li><a href="Workshop.html">Kids Camp/ Workshop</a></li>
+              <li><a href="multetoys.html">MulteToys Talk Show</a></li>
+              <li><a href="Train_the_Trainer.html">Train The Trainer</a></li>
+              <li><a href="Multe_outreach.html">Multe outreach</a></li>
+              <li><a href="Enroll_Trainer.html">Enroll Trainer</a></li>
 
-                    </ul>
-                </li>
-                <li><a class="nav-link scrollto" href="What'sNew.html">What's New</a></li>
-                <li><a class="nav-link scrollto " href="contact.html">Contact Us</a></li>
-                <li><a href="https://jzhic.courses.store/174461" target="_blank">Free Trial</a></li>
-                <!--<li class="dropdown"><a href="#"><span>Request</span> <i class="bi bi-chevron-down"></i></a>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="What'sNew.html">What's New</a></li>
+          <li><a class="nav-link scrollto active  " href="contact.html">Contact Us</a></li>
+          <li><a href="https://jzhic.courses.store/174461" target="_blank">Free Trial</a></li>
+          <!--<li class="dropdown"><a href="#"><span>Request</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
                         <li><a href="Enroll_Trainer.html">Enroll Trainer</a></li>
                         <li><a href="https://jzhic.courses.store/174461" target="_blank">Free Trial</a></li>
                     </ul>
                 </li>-->
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
 
-        </nav>
+      </nav>
       <!--navbar -->
       <a href="Getapp.html" class="get-started-btn scrollto"><svg xmlns="http://www.w3.org/2000/svg" width="16"
           height="16" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
@@ -164,35 +136,117 @@
           </div>
 
           <div class="col-lg-8 mt-5 mt-lg-0">
-            <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScT8guth-Dy3RMDCNYQKMKXlh1Twk8VnL_rba5RCc7PEo9aMw/formResponse" target="hidden_iframe" method="post"  class="php-email-form">
+            <!-- Start Contact Section -->
+            <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+              <div class="w3-content" style="max-width:600px">
+                <h4 class="w3-center"><b>Contact Us</b></h4>
 
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="entry.152649212" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="tel" name="Phone" class="form-control" id="Phone_number" placeholder="Contact Number"
-                    required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="entry.196304944" id="subject" placeholder="Subject" required>
-                </div>
-              </div>
+           
+                <!--Update the URL for thank you page on form submit -->
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+                  onload="if(submitted) {window.location='http://127.0.0.1:5500/thankyou.html';}"></iframe>
 
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
+                <!-- Update the Google forms URL in action-->
+                <form
+                  action="https://docs.google.com/forms/u/3/d/e/1FAIpQLScDcadDrUURBy3pzD1vCsPQxX_czaJU1AlMoRFppw6Pb0TXpg/formResponse"
+                  target="hidden_iframe" onsubmit=" validateForm()" method="post" class="contact-form">
 
-              <div class="col-md-12">
-                <button type="submit" id="submitButton" class="btn btn-primary">Submit</button>
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input type="text" name="entry.1942787088" class="form-control" id="name" placeholder="Your Name"
+                        required>
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <input type="text" class="form-control" name="entry.433440102" id="email"
+                        placeholder="Your Email" required>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input type="text" name="entry.1461389221" class="form-control" id="phone"
+                        placeholder="Contact Number" required>
+                    </div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <input type="text" class="form-control" name="entry.151496975" id="subject" placeholder="Subject"
+                        required>
+                    </div>
+                  </div>
+
+                  <div class="form-group mt-3">
+                    <textarea class="form-control" name="entry.1496447789" rows="5" placeholder="Message"
+                      required></textarea>
+                  </div>
+
+                  <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+
+                </form>
               </div>
-              
-            </form>
+            </div>
+
+            <script type="text/javascript">var submitted = false;</script>
+            <script type="text/javascript">
+              function validateName() {
+                var name = document.getElementById('name').value;
+                if (name.length == 0) {
+                  alert("Name can't be blank");
+                  return false;
+
+                }
+                if (!name.match(/^[a-zA-Z]{3,}(?: [a-zA-Z]+){0,2}$/)) {
+                  alert("Please enter your correct name");//Validation Message
+                  return false;
+                }
+                return true;
+              }
+              function validatePhone() {
+                var phone = document.getElementById('phone').value;
+                if (phone.length == 0) {
+                  alert("Phone number can't be blank");//Validation Message
+                  return false;
+                }
+
+                if (!phone.match(/^[0]?[789]\d{9}$/)) {
+                  alert("Please enter a correct phone number");//Validation Message
+                  return false;
+                }
+
+                return true;
+
+              }
+
+              function validateEmail() {
+
+                var email = document.getElementById('email').value;
+                if (email.length == 0) {
+                  alert("Email can't be blank");//Validation Message
+                  return false;
+
+                }
+
+                if (!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
+                  alert("Please enter a correct email address");//Validation Message
+                  return false;
+
+                }
+
+                return true;
+
+              }
+
+              function validateForm() {
+                if (!validateName() || !validatePhone() || !validateEmail()) {
+
+                  alert("Form not submitted");//Validation Message
+                  return false;
+                }
+                else {
+                  submitted = true;
+                  return true;
+                }
+              }
+            </script>
 
           </div>
 

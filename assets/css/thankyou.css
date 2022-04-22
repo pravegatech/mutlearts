@@ -1,0 +1,348 @@
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Open Sans", sans-serif;
+  color: rgb(0, 0, 0);
+  background: url("../img/download.jfif") top center no-repeat;
+  background-size: cover;
+  
+  position: relative;
+}
+.color{
+  color: #194F92 !important;
+  font-size: 140px !important;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+}
+body::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgb(255, 255, 255,0.12);
+}
+@media (min-width: 1024px) {
+  body {
+    background-attachment: fixed;
+  }
+}
+@media (max-width: 768px){
+  #header h1 {
+    font-size: 36px !important;
+}
+.color{
+  color: #194F92 !important;
+  font-size: 70px !important;
+  font-weight: bold;
+}
+.Logo img{
+  width: 500px !important;
+}
+}
+@media (max-width: 426px){
+  #header .social-links a {
+    font-size: 34px !important;
+}
+.Logo img{
+  width:250px !important;
+}
+.color{
+  color: #194F92 !important;
+  font-size: 60px !important;
+  font-weight: bold;
+}
+}
+@media (max-width:321px){
+  .color{
+    color: #194F92 !important;
+    font-size: 50px !important;
+    font-weight: bold;
+  }
+  #header h1 {
+    font-size: 30px !important;
+    line-height: 44px !important;
+}
+}
+
+.telegram{
+  color: #229ED9 !important;
+  font-size: 56px !important;
+}
+.youtube{
+  color: 	#FF0000 !important;
+}
+.instagram{
+  color:  #8a3ab9 !important;
+}
+.whatsapp-1{
+  color: #25D366 !important;
+  font-size: 56px !important;
+}
+.whatsapp{
+  color: #25D366 !important;
+}
+.twitter{
+  color: #1DA1F2 !important;
+}
+.facebook{
+  color: #4267B2 !important;
+}
+a {
+  color: #ffc451;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffc451;
+  text-decoration: none;
+}
+
+
+#main {
+  position: relative;
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: #ffc451;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+.back-to-top i {
+  font-size: 28px;
+  color: rgb(0, 0, 0);
+  line-height: 0;
+}
+.back-to-top:hover {
+  background: #ffc451;
+  color: rgb(0, 0, 0);
+}
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+.Logo{
+  width: 30%;
+}
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+  /* countdown */
+}
+#header h1 {
+  margin: 0 0 10px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height:40px;
+  color: #161F6D;
+}
+#header h2 {
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+.clicklink{
+  color: 	#008080	 !important;
+}
+#header .countdown {
+  margin-bottom: 40px;
+}
+#header .countdown div {
+  text-align: center;
+  margin: 10px;
+  width: 100px;
+  padding: 15px 0;
+  background: rgba(255, 255, 255,1);
+  border-top: 5px solid #ffc451;
+}
+#header .countdown div h3 {
+  font-weight: 700;
+  font-size: 44px;
+  margin-bottom: 15px;
+}
+#header .countdown div h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+@media (max-width: 575px) {
+  #header .countdown div {
+    width: 70px;
+    padding: 10px 0;
+    margin: 10px 8px;
+  }
+  #header .countdown div h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  #header .countdown div h4 {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+#header .subscribe {
+  font-size: 15px;
+  text-align: center;
+}
+#header .subscribe h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  position: relative;
+  padding-bottom: 12px;
+}
+#header .subscribe .subscribe-form {
+  min-width: 300px;
+  margin-top: 10px;
+  background: rgb(0, 0, 0);
+  padding: 6px 10px;
+  position: relative;
+  text-align: left;
+}
+
+#header .subscribe .error-message {
+  display: none;
+  color: #ffc451;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+#header .subscribe .sent-message {
+  display: none;
+  color: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+#header .subscribe .loading {
+  display: none;
+  text-align: center;
+  padding: 15px;
+}
+#header .subscribe .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading-notify 1s linear infinite;
+  animation: animate-loading-notify 1s linear infinite;
+}
+@-webkit-keyframes animate-loading-notify {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate-loading-notify {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#header .social-links {
+  margin-top: 10px;
+}
+#header .social-links a {
+  font-size: 46px;
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1;
+  padding-top: 14px;
+  margin: 0 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+#header .social-links a:hover {
+  color: #259B9A;
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 30px 0;
+}
+
+.section-bg {
+  background-color: #fff5f5;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 15px;
+}
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  position: relative;
+}
+.section-title p {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Contact Us
+--------------------------------------------------------------*/
+.about .content h2 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 60px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.about .content h3 {
+  font-weight: 500;
+  line-height: 32px;
+  font-size: 24px;
+}
+.about .content ul {
+  list-style: none;
+  padding: 0;
+}
+.about .content ul li {
+  padding: 10px 0 0 28px;
+  position: relative;
+}
+.about .content ul i {
+  left: 0;
+  top: 12px;
+  position: absolute;
+  font-size: 20px;
+  color: #ff0000;
+}
+.about .content p:last-child {
+  margin-bottom: 0;
+}
+.fst-italic{
+  font-size: 18px;
+}
+.Bold{
+  font-weight: bold;
+  font-size: medium;
+}
