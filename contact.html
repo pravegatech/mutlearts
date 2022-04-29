@@ -60,13 +60,13 @@
           </li>
           <li><a class="nav-link scrollto" href="What'sNew.html">What's New</a></li>
           <li><a class="nav-link scrollto active  " href="contact.html">Contact Us</a></li>
-          <li><a href="https://jzhic.courses.store/174461" target="_blank">Free Trial</a></li>
-          <!--<li class="dropdown"><a href="#"><span>Request</span> <i class="bi bi-chevron-down"></i></a>
-                    <ul>
-                        <li><a href="Enroll_Trainer.html">Enroll Trainer</a></li>
-                        <li><a href="https://jzhic.courses.store/174461" target="_blank">Free Trial</a></li>
-                    </ul>
-                </li>-->
+            <li class="dropdown">
+            <a href="#"><span>Free Trial</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="https://jzhic.courses.store/174461" target="_blank">Free Trial</a></li>
+              <li><a href="Free membership.html"  target="_blank" > Free membership</a></li>
+            </ul>
+          </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
 
@@ -141,7 +141,7 @@
               <div class="w3-content" style="max-width:600px">
                 <h4 class="w3-center"><b>Contact Us</b></h4>
 
-           
+
                 <!--Update the URL for thank you page on form submit -->
                 <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
                   onload="if(submitted) {window.location='http://127.0.0.1:5500/thankyou.html';}"></iframe>
@@ -157,24 +157,21 @@
                         required>
                     </div>
                     <div class="col-md-6 form-group mt-3 mt-md-0">
-                      <input type="text" class="form-control" name="entry.433440102" id="email"
-                        placeholder="Your Email" required>
+                      <input type="text" class="form-control" name="entry.433440102" id="email" placeholder="Your Email"
+                        required>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6 form-group">
-                      <input type="text" name="entry.1461389221" class="form-control" id="phone"
-                        placeholder="Contact Number" required>
+                      <input type="text" name="entry.1461389221" class="form-control" id="phone" placeholder="Contact Number" required>
                     </div>
                     <div class="col-md-6 form-group mt-3 mt-md-0">
-                      <input type="text" class="form-control" name="entry.151496975" id="subject" placeholder="Subject"
-                        required>
+                      <input type="text" class="form-control" name="entry.151496975" id="subject" placeholder="Subject"required>
                     </div>
                   </div>
 
                   <div class="form-group mt-3">
-                    <textarea class="form-control" name="entry.1496447789" rows="5" placeholder="Message"
-                      required></textarea>
+                    <textarea class="form-control" name="entry.1496447789" rows="5" placeholder="Message" required></textarea>
                   </div>
 
                   <div class="col-md-12">
@@ -185,7 +182,9 @@
               </div>
             </div>
 
-            <script type="text/javascript">var submitted = false;</script>
+            <script type="text/javascript">
+              var submitted = false;
+            </script>
             <script type="text/javascript">
               function validateName() {
                 var name = document.getElementById('name').value;
@@ -195,20 +194,21 @@
 
                 }
                 if (!name.match(/^[a-zA-Z]{3,}(?: [a-zA-Z]+){0,2}$/)) {
-                  alert("Please enter your correct name");//Validation Message
+                  alert("Please enter your correct name"); //Validation Message
                   return false;
                 }
                 return true;
               }
+
               function validatePhone() {
                 var phone = document.getElementById('phone').value;
                 if (phone.length == 0) {
-                  alert("Phone number can't be blank");//Validation Message
+                  alert("Phone number can't be blank"); //Validation Message
                   return false;
                 }
 
                 if (!phone.match(/^[0]?[789]\d{9}$/)) {
-                  alert("Please enter a correct phone number");//Validation Message
+                  alert("Please enter a correct phone number"); //Validation Message
                   return false;
                 }
 
@@ -220,13 +220,13 @@
 
                 var email = document.getElementById('email').value;
                 if (email.length == 0) {
-                  alert("Email can't be blank");//Validation Message
+                  alert("Email can't be blank"); //Validation Message
                   return false;
 
                 }
 
                 if (!email.match(/^[A-Za-z\._\-[0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)) {
-                  alert("Please enter a correct email address");//Validation Message
+                  alert("Please enter a correct email address"); //Validation Message
                   return false;
 
                 }
@@ -238,10 +238,9 @@
               function validateForm() {
                 if (!validateName() || !validatePhone() || !validateEmail()) {
 
-                  alert("Form not submitted");//Validation Message
+                  alert("Form not submitted"); //Validation Message
                   return false;
-                }
-                else {
+                } else {
                   submitted = true;
                   return true;
                 }
